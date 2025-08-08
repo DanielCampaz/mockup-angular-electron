@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run electron:start",
+    "start:angular": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "electron:build": "tsc -p tsconfig.electron.json",
+    "electron:start": "npm run build && npm run electron:build && electron dist/electron/root.js"
   },
   "prettier": {
     "overrides": [
@@ -35,6 +38,7 @@
     "@angular/cli": "^20.1.5",
     "@angular/compiler-cli": "^20.1.0",
     "@types/jasmine": "~5.1.0",
+    "electron": "^37.2.6",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

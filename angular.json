@@ -12,6 +12,7 @@
       "architect": {
         "build": {
           "builder": "@angular/build:application",
+          "outputPath": "dist/angular",
           "options": {
             "browser": "src/main.ts",
             "polyfills": [
